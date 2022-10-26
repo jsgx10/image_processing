@@ -115,7 +115,7 @@ int main(int argc, char **argv) {
 		end_time = clock();
 		cerr << "Time to write filter2.jpg: " << double (end_time - start_time) / CLOCKS_PER_SEC << " secs\n";
 
-		//PHASE 4 - Run Student 3's Code, if they exist. If they exist, uncomment out this code block
+		//PHASE 4 - Run Student 3's Code
 		   start_time = clock();
 		   filter3(vec,vec2); 
 		   end_time = clock();
