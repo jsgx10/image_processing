@@ -1,9 +1,9 @@
 //==================================================================================
 //Write your names here, and explain what each student's code does
-//Student 1 Name:
-//Student 1's Filter Description:
-//Student 2 Name:
-//Student 2's Filter Description:
+//Student 1 Name:Samuel Garnica
+//Student 1's Filter Description:Changed Color Values
+//Student 2 Name:Spencer Ha
+//Student 2's Filter Description:Demo Vignette,Greyscale rectangle across middle of image, Hashtag for Secret Message
 //Student 3 Name:Ayanna Avalos
 //Student 3's Filter Description:Water Mark/ Secret Message
 //==================================================================================
@@ -25,7 +25,7 @@ void filter1(vector<vector<vector<int>>> &vec);
 void filter2(vector<vector<vector<int>>> &vec);
 
 //Student3 will write this in the file filter3.cc, if they exist
-void filter3(vector<vector<vector<int>>> &vec,vector<vector<vector<int>>> &vec2);
+void filter3(vector<vector<vector<int>>> &vec);
 
 //This code must be run with a command line parameter, so print error and quit if they don't run it right
 void usage() {
@@ -117,12 +117,12 @@ int main(int argc, char **argv) {
 
 		//PHASE 4 - Run Student 3's Code
 		   start_time = clock();
-		   filter3(vec,vec2); 
+		   filter3(vec); 
 		   end_time = clock();
 		   cerr << "Filter 3 time: " << double (end_time - start_time) / CLOCKS_PER_SEC << " secs\n";
 		   start_time = clock();
 		   vec_to_image(image,vec,cols,rows); //Copy from the vec to the image object
-		image.save_png("filter3.png"); //Uncomment this for higher quality output
+		//image.save_png("filter3.png"); //Uncomment this for higher quality output
 		image.save_jpeg("filter3.jpg", 80); //Output result after filter 3
 		end_time = clock();
 		cerr << "Time to write filter3.jpg: " << double (end_time - start_time) / CLOCKS_PER_SEC << " secs\n";
