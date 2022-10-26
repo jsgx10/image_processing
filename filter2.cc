@@ -18,18 +18,23 @@ void filter2(vector<vector<vector<int>>> &vec) {
 
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			//DEMO CODE BEGIN
-			//How far are we from the center?
-			const double diag_length = hypot(rows/2.0,cols/2.0); //How many pixels is the diagonal from the center of the image to a corner?
+			int r = vec.at(i).at(j).at(RED); //Bounds check with .at the first time
+            int g = vec[i][j][GREEN]; //Skip bounds check for speed
+            int b = vec[i][j][BLUE];
+		/*	const double diag_length = hypot(rows/2,0,cols/2.0);
 			double distance = hypot(i-(rows/2.0),j-(cols/2.0));
-			double brightness = 2 - 2*(distance/diag_length); //0 brightness at corners, 200% brightness in middle
-			//cout << "i: " << i << " j: " << j << " bright: " << brightness << endl;
-			//cout << "diag_length: " << diag_length << " distance: " << distance << endl;
+			double brightness = 2 - 2*(distance/diag_length);
 			for (int k = 0; k < colors; k++) {
-				vec.at(i).at(j).at(k) *= brightness; //Lighten or darken each color by its distance from the center
+				vec.at(i).at(j).at(k) *= brightness;
+			} */
+			if (i > rows/2000 and i < (3*rows/2) and j > cols/2 and j < (2.5*cols/3)) {
+				int avg = (r+g+b)/3;
+				vec.at(i).at(j).at(RED) = avg;
+				vec.at(i).at(j).at(GREEN) = avg;
+				vec.at(i).at(j).at(BLUE) = avg; 
 			}
-			//DEMO CODE END
 		}
 	}
 }
+
 
