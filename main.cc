@@ -4,8 +4,8 @@
 //Student 1's Filter Description:
 //Student 2 Name:
 //Student 2's Filter Description:
-//Student 3 Name:
-//Student 3's Filter Description:
+//Student 3 Name:Ayanna Avalos
+//Student 3's Filter Description:Water Mark/ Secret Message
 //==================================================================================
 //You don't need to modify this file below this line, unless you, like, want to
 
@@ -122,7 +122,7 @@ int main(int argc, char **argv) {
 		   cerr << "Filter 3 time: " << double (end_time - start_time) / CLOCKS_PER_SEC << " secs\n";
 		   start_time = clock();
 		   vec_to_image(image,vec,cols,rows); //Copy from the vec to the image object
-		//image.save_png("filter3.png"); //Uncomment this for higher quality output
+		image.save_png("filter3.png"); //Uncomment this for higher quality output
 		image.save_jpeg("filter3.jpg", 80); //Output result after filter 3
 		end_time = clock();
 		cerr << "Time to write filter3.jpg: " << double (end_time - start_time) / CLOCKS_PER_SEC << " secs\n";
